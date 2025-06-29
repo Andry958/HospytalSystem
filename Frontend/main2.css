@@ -1,0 +1,353 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #22313f 0%, #2c3e50 100%);
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    transition: background 0.5s;
+}
+
+.container {
+    background: rgba(44, 62, 80, 0.98);
+    width: 95%;
+    max-width: 1200px;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1.5px solid #1abc9c33;
+    transition: box-shadow 0.3s;
+}
+
+/* Хедер */
+.header {
+    background: linear-gradient(90deg, #1abc9c 70%, #16a085 100%);
+    display: flex;
+    align-items: center;
+    padding: 18px 32px;
+    font-weight: 700;
+    font-size: 1.35rem;
+    gap: 30px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px #1abc9c33;
+    letter-spacing: 1px;
+}
+
+.menu-button {
+    background: linear-gradient(90deg, #16a085 70%, #138d75 100%);
+    color: #fff;
+    padding: 11px 28px;
+    border-radius: 7px;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px #16a08533;
+    transition: background 0.3s, box-shadow 0.2s, transform 0.1s;
+    outline: none;
+}
+.menu-button:hover, .menu-button:focus {
+    background: linear-gradient(90deg, #138d75 80%, #117a65 100%);
+    box-shadow: 0 4px 16px #16a08555;
+    transform: translateY(-2px) scale(1.03);
+}
+
+.doctor-info {
+    flex-grow: 1;
+    color: #ecf0f1;
+    font-size: 1.08rem;
+    text-shadow: 0 1px 2px #222f3e55;
+}
+
+/* Контент */
+.content {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Ряд з таблицями */
+.section-row {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+/* Стилі для таблиць */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background: linear-gradient(120deg, #3b4a60 80%, #34495e 100%);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.32);
+    transition: box-shadow 0.2s;
+}
+
+caption {
+    caption-side: top;
+    text-align: center;
+    font-size: 1.28rem;
+    font-weight: 700;
+    padding: 12px 0 4px 0;
+    color: #1abc9c;
+    letter-spacing: 1.2px;
+    text-shadow: 0 1px 2px #222f3e33;
+}
+
+thead tr {
+    background: linear-gradient(90deg, #1abc9c 80%, #16a085 100%);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.93rem;
+}
+
+thead th {
+    padding: 13px 15px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+    user-select: none;
+    letter-spacing: 0.5px;
+}
+thead th:last-child {
+    border-right: none;
+}
+
+tbody tr {
+    background: linear-gradient(90deg, #2c3e50 80%, #34495e 100%);
+    color: #ecf0f1;
+    transition: background 0.22s, box-shadow 0.18s;
+    cursor: default;
+}
+tbody tr:hover {
+    background: #1abc9c33;
+    box-shadow: 0 2px 8px #1abc9c22;
+}
+tbody td {
+    padding: 13px 15px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.09);
+}
+tbody td:last-child {
+    border-right: none;
+}
+
+/* Однакові стилі для всіх трьох таблиць */
+#doctorsTable,
+#patientsTable,
+#medicationTable {
+    height: 500px;
+    display: block;
+    overflow: hidden;
+    border: 1px solid #1abc9c33;
+    margin-bottom: 0;
+}
+
+#doctorsTable thead, #doctorsTable tbody, #doctorsTable tr,
+#patientsTable thead, #patientsTable tbody, #patientsTable tr,
+#medicationTable thead, #medicationTable tbody, #medicationTable tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#doctorsTable tbody,
+#patientsTable tbody,
+#medicationTable tbody {
+    display: block;
+    height: 430px;
+    overflow-y: auto;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #1abc9c #34495e;
+}
+
+/* Кастомний скролбар для таблиць */
+#doctorsTable tbody::-webkit-scrollbar,
+#patientsTable tbody::-webkit-scrollbar,
+#medicationTable tbody::-webkit-scrollbar {
+    width: 8px;
+    background: #34495e;
+    border-radius: 8px;
+}
+#doctorsTable tbody::-webkit-scrollbar-thumb,
+#patientsTable tbody::-webkit-scrollbar-thumb,
+#medicationTable tbody::-webkit-scrollbar-thumb {
+    background: #1abc9c;
+    border-radius: 8px;
+}
+
+/* Секція медикаментів */
+.medications-section table {
+    margin-top: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .section-row {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .content {
+        padding: 18px 6vw;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        border-radius: 0;
+        box-shadow: none;
+        width: 100vw;
+        max-width: 100vw;
+    }
+    .header, .content {
+        padding: 12px 2vw;
+    }
+    table, .modal-content {
+        font-size: 0.98rem;
+    }
+}
+
+/* Модальне вікно */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(44, 62, 80, 0.88);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+    backdrop-filter: blur(2px);
+}
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: linear-gradient(120deg, #222f3e 90%, #34495e 100%);
+    padding: 36px 24px;
+    border-radius: 18px;
+    min-width: 320px;
+    max-width: 95vw;
+    box-shadow: 0 10px 36px rgba(0,0,0,0.38);
+    width: 70%;
+    color: #fff;
+    animation: modalShow 0.22s;
+    border: 2.5px solid #1abc9c;
+    transition: box-shadow 0.2s;
+     max-height: 60vh;      /* Фіксована максимальна висота */
+    overflow-y: auto; 
+}
+.modal-content h1 {
+    margin-top: 0;
+    color: #1abc9c;
+    letter-spacing: 1px;
+}
+.modal-content strong {
+    color: #1abc9c;
+}
+.modal-content ul li {
+    color: #ecf0f1;
+}
+.modal-content span, 
+.modal-content p {
+    color: #fff;
+}
+@keyframes modalShow {
+    from { transform: translateY(40px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Додаткові покращення для доступності */
+.menu-button:focus-visible {
+    outline: 2.5px solid #1abc9c;
+    outline-offset: 2px;
+}
+tbody tr:focus-within {
+    background: #1abc9c55;
+    outline: 2px solid #1abc9c;
+} 
+.modal-content::-webkit-scrollbar {
+    width: 10px;
+    background: #34495e;
+    border-radius: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background: #1abc9c;
+    border-radius: 8px;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100vh;
+    background: linear-gradient(120deg, #22313f 90%, #16a085 100%);
+    box-shadow: 2px 0 18px #0008;
+    z-index: 10000;
+    padding: 32px 18px 18px 18px;
+    transform: translateX(-100%);
+    transition: transform 0.28s cubic-bezier(.4,1.2,.4,1);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.side-menu ul li {
+    margin-bottom: 18px;
+}
+.side-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.13rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.side-menu ul li a:hover {
+    color: #1abc9c;
+}
+.side-menu .close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 18px;
+    transition: color 0.2s;
+}
+.side-menu .close-btn:hover {
+    color: #1abc9c;
+}
+.side-menu.show {
+    transform: translateX(0);
+}
+.side-menu.hidden {
+    display: block;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.side-menu.show {
+    pointer-events: auto;
+    opacity: 1;
+    transition: transform 0.28s, opacity 0.18s;
+}
+tbody tr.selected {
+    background: #1abc9c99 !important;
+    outline: 2px solid #1abc9c;
+}

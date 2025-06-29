@@ -1,5 +1,25 @@
 [
   {
+    "ContainingType": "HospitalSystem.Controllers.AutoFillController",
+    "Method": "Get",
+    "RelativePath": "api/autofill",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.AutoFillController",
+    "Method": "GetAll",
+    "RelativePath": "api/autofill",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "HospitalSystem.Controllers.DoctorListController",
     "Method": "GetDoctors",
     "RelativePath": "api/doctors",
@@ -7,6 +27,59 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.DoctorListController",
+    "Method": "RemoveDoctor",
+    "RelativePath": "api/doctors/{doctorId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.DoctorListController",
+    "Method": "UpdateDoctor",
+    "RelativePath": "api/doctors/{doctorId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "d",
+        "Type": "HospitalSystem.Models.Dto.DoctorEditItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.GetInformationController",
+    "Method": "GetInformation",
+    "RelativePath": "api/informationAboutUser/{pation}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pation",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -19,14 +92,204 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "HospitalSystem.Controllers.LoginController\u002BLoginRequest",
+        "Type": "HospitalSystem.Models.Dto.LoginRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "HospitalSystem.Controllers.WeatherForecastController",
+    "ContainingType": "HospitalSystem.Controllers.MedicationController",
+    "Method": "GetMedications",
+    "RelativePath": "api/medication",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.MedicationController",
+    "Method": "PostMedications",
+    "RelativePath": "api/medication",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mq",
+        "Type": "HospitalSystem.Models.Dto.MedicationRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.MedicationController",
+    "Method": "RemoveMedication",
+    "RelativePath": "api/medication/{medicationId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "medicationId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.MedicationController",
+    "Method": "UpdateMedication",
+    "RelativePath": "api/medication/{medicationId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "medicationId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "mq",
+        "Type": "HospitalSystem.Models.Dto.MedicationRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.MedicationController",
+    "Method": "Sorted",
+    "RelativePath": "api/medication/sorted",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "SortedBy",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.PatientController",
+    "Method": "GetPatient",
+    "RelativePath": "api/patients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.PatientController",
+    "Method": "PostPatient",
+    "RelativePath": "api/patients",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pr",
+        "Type": "HospitalSystem.Models.Dto.PatientRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.PatientEditorController",
+    "Method": "Add",
+    "RelativePath": "api/patientsEd",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pq",
+        "Type": "HospitalSystem.Models.Dto.PatientRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.PatientEditorController",
+    "Method": "Sorted",
+    "RelativePath": "api/patientsEd",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sortedBy",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.PatientEditorController",
+    "Method": "Change",
+    "RelativePath": "api/patientsEd/{patientId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "pq",
+        "Type": "HospitalSystem.Models.Dto.PatientRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.PatientEditorController",
+    "Method": "Delete",
+    "RelativePath": "api/patientsEd/{patientId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.PatientEditorController",
+    "Method": "AddDiagnos",
+    "RelativePath": "api/patientsEd/diagnosis",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "d",
+        "Type": "HospitalSystem.Models.Dto.DiagnosisCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HospitalSystem.Controllers.RegisterController",
     "Method": "Register",
     "RelativePath": "api/register",
     "HttpMethod": "POST",
@@ -35,7 +298,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "HospitalSystem.Controllers.RegisterRequest",
+        "Type": "HospitalSystem.Models.Dto.RegisterRequestDto",
         "IsRequired": true
       }
     ],

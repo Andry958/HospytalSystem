@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HospitalSystem.Models.Core;
+using Microsoft.EntityFrameworkCore;
 
-namespace HospitalSystem.Models
+namespace HospitalSystem.Models.DB
 {
     public class HospitalDbContext : DbContext
     {

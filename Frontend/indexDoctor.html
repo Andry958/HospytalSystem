@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Лікарі</title>
+    <link rel="stylesheet" href="./main2.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index2.html" class="menu-button">Головна</a>
+            <div class="doctor-info"></div>
+        </div>
+        <div class="content">
+            <h2>Список лікарів</h2>
+            <table id="doctorsTable">
+                <thead>
+                    <tr>
+                        <th>Ім'я</th>
+                        <th>Прізвище</th>
+                        <th>Вік</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Лікарі будуть тут -->
+                </tbody>
+            </table>
+            <div style="margin-top:24px; display:flex; gap:18px;">
+                <button id="addDoctorBtn" class="menu-button">Додати</button>
+                <button id="editDoctorBtn" class="menu-button">Редагувати</button>
+                <button id="deleteDoctorBtn" class="menu-button">Видалити</button>
+                <button id="infoDoctorBtn" class="menu-button">Інформація</button>
+                <button id="sortDoctorBtn" class="menu-button">Сортування</button>
+            </div>
+        </div>
+    </div>
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h1 id="modalDoctorName"></h1>
+            <section></section>
+        </div>
+    </div>
+    <script type="module" src="./jsDoctor.js" ></script>
+</body>
+</html>

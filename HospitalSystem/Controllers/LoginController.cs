@@ -1,4 +1,6 @@
-﻿using HospitalSystem.Models;
+﻿using HospitalSystem.Models.Dto;
+using HospitalSystem.Models.Services;
+using HospitalSystem.Models.Servies;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalSystem.Controllers
@@ -7,45 +9,29 @@ namespace HospitalSystem.Controllers
     [Route("api/login")]
     public class LoginController : Controller
     {
-        private readonly HospitalDbContext _context;
+        private readonly LoginC_service _service;
 
-        public LoginController(HospitalDbContext context)
+        public LoginController(LoginC_service service)
         {
-            _context = context;
+            _service = service;
         }
+
         [HttpPost]
-        public IActionResult Login([FromBody] LoginRequest request)
+        public async Task<IActionResult> Login([FromBody] LoginRequestDto request)
         {
             if (string.IsNullOrEmpty(request.Login) || string.IsNullOrEmpty(request.Password))
             {
                 return BadRequest("Login and password must be provided.");
             }
-            var doctor = _context.Doctors.FirstOrDefault(d => d.Login == request.Login && d.Password == request.Password);
-            if (doctor == null)
+
+            var response = await _service.AuthenticateAsync(request);
+
+            if (response == null)
             {
                 return Unauthorized("Invalid login or password.");
             }
-            var response = new LoginResponse
-            {
-                DoctorId = doctor.Id,
-                Name = doctor.Name,
-                LastName = doctor.LastName,
-                Age = doctor.Age
-            };
-            return Ok(response);
-        }
 
-        public class LoginRequest
-        {
-            public string Login { get; set; }
-            public string Password { get; set; }
-        }
-        public class LoginResponse
-        {
-            public Guid DoctorId { get; set; }
-            public string Name { get; set; }
-            public string LastName { get; set; }
-            public int Age { get; set; }
+            return Ok(response);
         }
     }
 }

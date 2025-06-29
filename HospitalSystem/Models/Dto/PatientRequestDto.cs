@@ -1,8 +1,7 @@
-﻿namespace HospitalSystem.Models
+﻿namespace HospitalSystem.Models.Dto
 {
-    public class Patient
+    public class PatientRequestDto
     {
-        public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public int Age { get; set; }

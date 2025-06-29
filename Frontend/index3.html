@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Пацієнти</title>
+    <link rel="stylesheet" href="./main2.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index2.html" class="menu-button">Головна</a>
+            <div class="doctor-info"></div>
+        </div>
+        <div class="content">
+            <h2>Список пацієнтів</h2>
+            <table id="patientsTable">
+                <thead>
+                    <tr>
+                        <th>Ім'я</th>
+                        <th>Прізвище</th>
+                        <th>Вік</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Пацієнти будуть тут -->
+                </tbody>
+            </table>
+            <div style="margin-top:24px; display:flex; gap:18px;">
+                <button id="addBtn" class="menu-button">Додати</button>
+                <button id="editBtn" class="menu-button" >Редагувати</button>
+                <button id="deleteBtn" class="menu-button" >Видалити</button>
+                <button id="infoBtn" class="menu-button" >Інформація</button>
+                <button id="addDiagnosisBtn" class="menu-button">Додати діагноз</button>
+                <button id="SortedBtn" class="menu-button">Сортування</button>
+            </div>
+        </div>
+    </div>
+        <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h1 id="modalPatientName"></h1>
+            <section>
+                
+            </section>
+        </div>
+    </div>
+    <div id="diagnosisModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h1>Додати діагноз</h1>
+            <form id="diagnosisForm">
+                <label>Опис діагнозу:<br>
+                    <textarea name="description" required></textarea>
+                </label><br><br>
+                <label>Назва хвороби:<br>
+                    <input name="nameDisease" required>
+                </label><br><br>
+                <label>Опис хвороби:<br>
+                    <textarea name="descriptionDisease" required></textarea>
+                </label><br><br>
+                <label>Дата відвідування:<br>
+                    <input type="date" name="visitDate" required>
+                </label><br><br>
+                <button type="submit" class="menu-button">Зберегти</button>
+                <button type="button" id="closeDiagnosisModal" class="menu-button">Скасувати</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="./JS/patients.js"></script>
+</body>
+</html>

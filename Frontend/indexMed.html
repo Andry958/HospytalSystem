@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Медикаменти</title>
+    <link rel="stylesheet" href="./main2.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index2.html" class="menu-button">Головна</a>
+            <div class="doctor-info"></div>
+        </div>
+        <div class="content">
+            <h2>Список медикаментів</h2>
+            <table id="medicationTable">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Опис</th>
+                        <th>Кількість</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Медикаменти будуть тут -->
+                </tbody>
+            </table>
+            <div style="margin-top:24px; display:flex; gap:18px;">
+                <button id="addMedicationBtn" class="menu-button">Додати</button>
+                <button id="editMedicationBtn" class="menu-button">Редагувати</button>
+                <button id="deleteMedicationBtn" class="menu-button">Видалити</button>
+                <button id="sortMedicationBtn" class="menu-button">Сортування</button>
+            </div>
+        </div>
+    </div>
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h1 id="modalMedicationName"></h1>
+            <section></section>
+        </div>
+    </div>
+    <script type="module" src="./jsMed.js"></script>
+</body>
+</html>

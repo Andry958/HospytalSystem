@@ -1,4 +1,4 @@
-﻿namespace HospitalSystem.Models
+﻿namespace HospitalSystem.Models.Core
 {
     public class Visit
     {

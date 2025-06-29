@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Intrinsics.X86;
 
-namespace HospitalSystem.Models
+namespace HospitalSystem.Models.Core
 {
     public class Doctor
     {

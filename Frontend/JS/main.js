@@ -40,16 +40,19 @@ loginForm.addEventListener('submit', async e => {
 
     const data = await response.json();
     console.log('Успішний вхід:', data);
-    alert(`Вхід успішний! Вітаємо, ${data.age}`);
     doctor.age = data.age;
     doctor.name = data.name;
     doctor.lastName = data.lastName;
+    doctor.id = data.doctorId || null; 
+
     localStorage.setItem('doctor', JSON.stringify({
       name: doctor.name,
       lastName: doctor.lastName,
-      age: doctor.age
+      age: doctor.age,
+      id: doctor.id
+
     }));
-    console.log(`Інформація про лікаря: ${doctor.name} ${doctor.lastName}, ${doctor.age} років`);
+    console.log(`Інформація про лікаря: ${doctor.name} ${doctor.lastName}, ${doctor.age} років ID: ${doctor.id}`);
     loginForm.reset();
     window.location.href = "index2.html";
   } catch (error) {
@@ -89,17 +92,19 @@ registerForm.addEventListener('submit', async e => {
     }
 
     const data = await response.json();
-    alert(`Реєстрація успішна! Вітаємо, ${data.name || name}`);
     // Зберігаємо дані лікаря в localStorage
+    console.log('Успішна реєстрація:', data);
     doctor.age = data.age || age;
     doctor.name = data.name || name;
     doctor.lastName = data.lastName || lastName;
+    doctor.id = data.id || null; 
     localStorage.setItem('doctor', JSON.stringify({
       name: doctor.name,
       lastName: doctor.lastName,
-      age: doctor.age
+      age: doctor.age,
+      id: doctor.id
     }));
-    console.log(`Інформація про лікаря: ${doctor.name} ${doctor.lastName}, ${doctor.age} років`);
+    console.log(`Інформація про лікаря: ${doctor.name} ${doctor.lastName}, ${doctor.age} років, ID: ${doctor.id}`);
     registerForm.reset();
     window.location.href = "index2.html";
   } catch (error) {
